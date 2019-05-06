@@ -55,6 +55,7 @@ Note:
 
 ## Third-party Implementations
 
+- [PyTorch Implementation](https://github.com/d-li14/octconv.pytorch) **with imagenet training log and pre-trained model** by [d-li14](https://github.com/d-li14)
 - [MXNet Implementation](https://github.com/terrychenism/OctaveConv) **with imagenet training log** by [terrychenism](https://github.com/terrychenism)
 - [Keras Implementation](https://github.com/koshian2/OctConv-TFKeras) **with cifar10 results** by [koshian2](https://github.com/koshian2)
 
