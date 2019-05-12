@@ -9,10 +9,9 @@ Note:
 
 ## To Do List
 - [x] [Code for ablation study (by Symbol API)](utils/symbol)
+- [x] Trained models (ablation)
 - [ ] Code for the rest exps (by Gluon API)
-- [ ] Training script
-- [ ] Training logs
-- [ ] Trained models
+- [ ] Trained models (rest exps)
 
 
 ## ImageNet
@@ -24,7 +23,19 @@ Note:
 
 ![example](figs/ablation.png)
 
+|     Model    |   baseline  |  alpha = 0.125  |  alpha = 0.25   |   alpha = 0.5   |  alpha = 0.75   |
+|:------------:|:-----------:|:---------------:|:---------------:|:---------------:|:---------------:|
+| DenseNet-121 | 75.4 / 92.7 | [76.1 / 93.0](https://dl.fbaipublicfiles.com/octconv/ablation/a01_densenet-121_alpha-0.125.tar) | [75.9 / 93.1](https://dl.fbaipublicfiles.com/octconv/ablation/a01_densenet-121_alpha-0.250.tar) |        --       |        --       |
+|  ResNet-26   | 73.2 / 91.3 | [75.8 / 92.6](https://dl.fbaipublicfiles.com/octconv/ablation/a02_resnet-26_alpha-0.125.tar) | [76.1 / 92.6](https://dl.fbaipublicfiles.com/octconv/ablation/a02_resnet-26_alpha-0.250.tar) | [75.5 / 92.5](https://dl.fbaipublicfiles.com/octconv/ablation/a02_resnet-26_alpha-0.500.tar) | [74.6 / 92.1](https://dl.fbaipublicfiles.com/octconv/ablation/a02_resnet-26_alpha-0.750.tar) |
+|  ResNet-50   | 77.0 / 93.4 | [78.2 / 93.9](https://dl.fbaipublicfiles.com/octconv/ablation/a03_resnet-50_alpha-0.125.tar) | [78.0 / 93.8](https://dl.fbaipublicfiles.com/octconv/ablation/a03_resnet-50_alpha-0.250.tar) | [77.4 / 93.6](https://dl.fbaipublicfiles.com/octconv/ablation/a03_resnet-50_alpha-0.500.tar) | [76.7 / 93.0](https://dl.fbaipublicfiles.com/octconv/ablation/a03_resnet-50_alpha-0.750.tar) |
+| SE-ResNet-50 | 77.6 / 93.6 | [78.7 / 94.1](https://dl.fbaipublicfiles.com/octconv/ablation/a05_se-resnet-50_alpha-0.125.tar) | [78.4 / 94.0](https://dl.fbaipublicfiles.com/octconv/ablation/a05_se-resnet-50_alpha-0.250.tar) | [77.9 / 93.8](https://dl.fbaipublicfiles.com/octconv/ablation/a05_se-resnet-50_alpha-0.500.tar) | [77.4 / 93.5](https://dl.fbaipublicfiles.com/octconv/ablation/a05_se-resnet-50_alpha-0.750.tar) |
+|  ResNeXt-50  | 78.4 / 94.0 |       --        | [78.8 / 94.2](https://dl.fbaipublicfiles.com/octconv/ablation/a04_resnext-50_32x4d_alpha-0.250.tar) | [78.4 / 94.0](https://dl.fbaipublicfiles.com/octconv/ablation/a04_resnext-50_32x4d_alpha-0.500.tar) | [77.5 / 93.6](https://dl.fbaipublicfiles.com/octconv/ablation/a04_resnext-50_32x4d_alpha-0.750.tar) |
+|  ResNet-101  | 78.5 / 94.1 | [79.2 / 94.4](https://dl.fbaipublicfiles.com/octconv/ablation/a06_resnet-101_alpha-0.125.tar) | [79.2 / 94.4](https://dl.fbaipublicfiles.com/octconv/ablation/a06_resnet-101_alpha-0.250.tar) | [78.7 / 94.1](https://dl.fbaipublicfiles.com/octconv/ablation/a06_resnet-101_alpha-0.500.tar) |       --        |
+|  ResNeXt-101 | 79.4 / 94.6 |       --        | [79.6 / 94.5](https://dl.fbaipublicfiles.com/octconv/ablation/a07_resnext-101_32x4d_alpha-0.250.tar) | [78.9 / 94.4](https://dl.fbaipublicfiles.com/octconv/ablation/a07_resnext-101_32x4d_alpha-0.500.tar) |       --        |
+|  ResNet-200  | 79.6 / 94.7 | [80.0 / 94.9](https://dl.fbaipublicfiles.com/octconv/ablation/a08_resnet-200_alpha-0.125.tar) | [79.8 / 94.8](https://dl.fbaipublicfiles.com/octconv/ablation/a08_resnet-200_alpha-0.250.tar) | [79.5 / 94.7](https://dl.fbaipublicfiles.com/octconv/ablation/a08_resnet-200_alpha-0.500.tar) |       --        |
+
 Note:
+- Top-1 / Top-5, single center crop accuracy is shown in the table. ([testing script](utils/symbol/score.py))
 - All residual networks in ablation study adopt pre-actice version[1] for convenience.
 
 
