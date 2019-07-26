@@ -3,16 +3,6 @@ MXNet implementation for:
 
 [Drop an Octave: Reducing Spatial Redundancy in Convolutional Neural Networks with Octave Convolution](https://arxiv.org/abs/1904.05049)
 
-Note:
-- This repo is under development.
-
-
-## To Do List
-- [x] [Code for ablation study (by Symbol API)](utils/symbol)
-- [x] Trained models (ablation)
-- [ ] Code for the rest exps (by Gluon API)
-- [ ] Trained models (rest exps)
-
 
 ## ImageNet
 
@@ -43,14 +33,14 @@ Note:
 - Learning rate: Cosine (warm-up: 5 epochs, lr: 0.4)
 - MXNet API: [Gluon API](https://mxnet.incubator.apache.org/api/python/gluon/nn.html)
 
-|         Model        | alpha | label smoothing[2] | mixup[3] |#Params | #FLOPs |  Top1 |
-|:--------------------:|:-----:|:------------------:|:--------:|:------:|:------:|:-----:|
-| 0.75  MobileNet (v1) |  .375 |                    |          |  2.6 M |  213 M |  70.6 |
-| 1.0   MobileNet (v1) |  .5   |                    |          |  4.2 M |  321 M |  72.4 |
-| 1.0   MobileNet (v2) |  .375 |         Yes        |          |  3.5 M |  256 M |  72.0 |
-| 1.125 MobileNet (v2) |  .5   |         Yes        |          |  4.2 M |  295 M |  73.0 |
-| Oct-ResNet-152       |  .125 |         Yes        |    Yes   | 60.2 M | 10.9 G |  81.4 |
-| Oct-ResNet-152 + SE  |  .125 |         Yes        |    Yes   | 66.8 M | 10.9 G |  81.6 |
+|         Model        | alpha | label smoothing[2] | mixup[3] |#Params | #FLOPs |  Top1 / Top5 |
+|:--------------------:|:-----:|:------------------:|:--------:|:------:|:------:|:------------:|
+| 0.75  MobileNet (v1) |  .375 |                    |          |  2.6 M |  213 M | [70.5 / 89.5](https://dl.fbaipublicfiles.com/octconv/others/mobilenet_v1_075_alpha-0.375.params) |
+| 1.0   MobileNet (v1) |  .5   |                    |          |  4.2 M |  321 M | [72.5 / 90.6](https://dl.fbaipublicfiles.com/octconv/others/mobilenet_v1_100_alpha-0.5.params) |
+| 1.0   MobileNet (v2) |  .375 |         Yes        |          |  3.5 M |  256 M | [72.0 / 90.7](https://dl.fbaipublicfiles.com/octconv/others/mobilenet_v2_100_alpha-0.375.params) |
+| 1.125 MobileNet (v2) |  .5   |         Yes        |          |  4.2 M |  295 M | [73.0 / 91.2](https://dl.fbaipublicfiles.com/octconv/others/mobilenet_v2_1125_alpha-0.5.params) |
+| Oct-ResNet-152       |  .125 |         Yes        |    Yes   | 60.2 M | 10.9 G | [81.4 / 95.4](https://dl.fbaipublicfiles.com/octconv/others/resnet152_v1f_alpha-0.125.params) |
+| Oct-ResNet-152 + SE  |  .125 |         Yes        |    Yes   | 66.8 M | 10.9 G | [81.6 / 95.7](https://dl.fbaipublicfiles.com/octconv/others/se-resnet152_v1e_alpha-0.125.params) |
 
 
 ## Citation
@@ -58,7 +48,7 @@ Note:
 @article{chen2019drop,
   title={Drop an Octave: Reducing Spatial Redundancy in Convolutional Neural Networks with Octave Convolution},
   author={Chen, Yunpeng and Fan, Haoqi and Xu, Bing and Yan, Zhicheng and Kalantidis, Yannis and Rohrbach, Marcus and Yan, Shuicheng and Feng, Jiashi},
-  journal={arXiv preprint arXiv:1904.05049},
+  journal={Proceedings of the IEEE International Conference on Computer Vision},
   year={2019}
 }
 ```
