@@ -3,6 +3,13 @@ MXNet implementation for:
 
 [Drop an Octave: Reducing Spatial Redundancy in Convolutional Neural Networks with Octave Convolution](https://arxiv.org/abs/1904.05049)
 
+## Install Dependencies
+
+- Install dependencies using requirements.txt
+
+```shell
+pip install -r requirements.txt
+```
 
 ## ImageNet
 
